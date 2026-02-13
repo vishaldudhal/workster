@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { Bell, BriefcaseBusiness, FileText, FolderKanban, LayoutDashboard, MessageSquare, Search } from 'lucide-react'
+import { Bell, BriefcaseBusiness, FileText, FolderKanban, LayoutDashboard, LogOut, MessageSquare, Search } from 'lucide-react'
+import { signOutAction } from '@/app/(app)/actions'
 
 const nav = [
   { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
@@ -35,6 +36,12 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               )
             })}
           </nav>
+
+          <form action={signOutAction} className="mt-6">
+            <button className="flex w-full items-center justify-center gap-2 rounded-xl border px-3 py-2 text-sm" style={{ borderColor: 'var(--line)' }}>
+              <LogOut size={14} /> Sign out
+            </button>
+          </form>
         </aside>
 
         <section className="space-y-4">
