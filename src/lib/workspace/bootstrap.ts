@@ -1,6 +1,8 @@
-import { supabaseAdmin } from '@/lib/supabase/admin'
+import { getSupabaseAdmin } from '@/lib/supabase/admin'
 
 export async function ensureWorkspaceForUser(userId: string, email?: string | null) {
+  const supabaseAdmin = getSupabaseAdmin()
+
   const { data: existing, error: existingError } = await supabaseAdmin
     .from('workspace_members')
     .select('workspace_id, role')
