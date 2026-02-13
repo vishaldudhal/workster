@@ -13,6 +13,9 @@ export default function DashboardPage() {
       <section className="glass soft-card p-6 md:p-8">
         <p className="text-sm text-indigo-300">Overview</p>
         <h2 className="mt-1 text-2xl font-semibold md:text-3xl">Good morning, DV 👋</h2>
+        <p className="mt-2 inline-flex rounded-full border px-3 py-1 text-xs text-emerald-300" style={{ borderColor: 'var(--line)' }}>
+          Live Build Stream: Active
+        </p>
         <p className="mt-2 text-sm" style={{ color: 'var(--muted)' }}>
           Here’s your agency health snapshot — projects, cashflow, and workload in one place.
         </p>
