@@ -1,20 +1,26 @@
 import Link from 'next/link'
+import { ArrowRight, Sparkles } from 'lucide-react'
 
 export default function Home() {
   return (
-    <main className="min-h-screen p-6 md:p-10">
-      <div className="mx-auto max-w-5xl space-y-6">
-        <section className="glass rounded-3xl p-8 md:p-10">
-          <p className="text-sm uppercase tracking-[0.2em] text-sky-300">Workster</p>
-          <h1 className="mt-3 text-4xl font-bold md:text-5xl">One suite for agencies to run work, clients, and cashflow.</h1>
-          <p className="mt-4 max-w-2xl text-slate-300">
-            Minimal, glassy, mobile-ready workspace for teams of 10–20. Built with Next.js + Supabase.
+    <main className="min-h-screen p-4 md:p-8">
+      <div className="mx-auto max-w-6xl space-y-5">
+        <section className="glass soft-card overflow-hidden p-8 md:p-12">
+          <div className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs text-indigo-300" style={{ borderColor: 'var(--line)' }}>
+            <Sparkles size={14} /> Workster • Built for 10-20 member agencies
+          </div>
+          <h1 className="mt-5 max-w-3xl text-4xl font-bold leading-tight md:text-6xl">
+            Run projects, clients, billing, and files in one beautiful workspace.
+          </h1>
+          <p className="mt-4 max-w-2xl text-base md:text-lg" style={{ color: 'var(--muted)' }}>
+            Affordable all-in-one business suite inspired by the best — tailored for growing agencies.
           </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/dashboard" className="rounded-xl bg-sky-500 px-5 py-3 text-sm font-medium text-white">
-              Open app shell
+
+          <div className="mt-7 flex flex-wrap gap-3">
+            <Link href="/dashboard" className="inline-flex items-center gap-2 rounded-2xl bg-indigo-500 px-5 py-3 text-sm font-medium text-white hover:bg-indigo-400">
+              Enter Workster <ArrowRight size={16} />
             </Link>
-            <Link href="/sign-in" className="rounded-xl border border-white/20 px-5 py-3 text-sm font-medium text-slate-200">
+            <Link href="/sign-in" className="rounded-2xl border px-5 py-3 text-sm" style={{ borderColor: 'var(--line)' }}>
               Sign in preview
             </Link>
           </div>

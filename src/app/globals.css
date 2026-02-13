@@ -1,28 +1,53 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #f6f8fb;
+  --bg: #f4f7ff;
   --fg: #0f172a;
-  --card: rgba(255, 255, 255, 0.7);
+  --muted: #5b6475;
+  --glass: rgba(255, 255, 255, 0.65);
   --line: rgba(15, 23, 42, 0.08);
+  --brand: #4f46e5;
+  --brand-2: #06b6d4;
 }
 
 .dark {
-  --bg: #050816;
-  --fg: #e2e8f0;
-  --card: rgba(15, 23, 42, 0.6);
+  --bg: #060816;
+  --fg: #e6ebff;
+  --muted: #9aa4ba;
+  --glass: rgba(11, 18, 40, 0.6);
   --line: rgba(148, 163, 184, 0.2);
+  --brand: #7c72ff;
+  --brand-2: #35d4ff;
+}
+
+* {
+  border-color: var(--line);
 }
 
 body {
-  background: radial-gradient(circle at top, #12213f 0%, var(--bg) 40%);
+  min-height: 100dvh;
+  background:
+    radial-gradient(900px 400px at 10% -10%, color-mix(in oklab, var(--brand) 25%, transparent), transparent),
+    radial-gradient(700px 420px at 90% -10%, color-mix(in oklab, var(--brand-2) 20%, transparent), transparent),
+    var(--bg);
   color: var(--fg);
   font-family: var(--font-geist), Inter, system-ui, sans-serif;
-  min-height: 100dvh;
 }
 
 .glass {
-  background: var(--card);
-  backdrop-filter: blur(12px);
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--line);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.25) inset,
+    0 12px 30px rgba(2, 8, 30, 0.08);
+}
+
+.soft-card {
+  border-radius: 24px;
+}
+
+.kpi {
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.12), rgba(6, 182, 212, 0.08));
 }
